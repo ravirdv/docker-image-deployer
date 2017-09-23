@@ -12,30 +12,24 @@ This service can talk to docker-engine via UDS or TCP.
 - Run : `./main'
 
 ## Examples
-- Deploy Command using CURL
-    `curl -XPOST  -H "Content-Type: application/json" --data @deploy.json http://localhost:8080/deploy`
-
-    Validation: image name is mandatory
+- Deploy Command using CURL:
+    - `curl -XPOST  -H "Content-Type: application/json" --data @deploy.json http://localhost:8080/deploy`
 
 - Deploy Status
-    `curl -X GET http://localhost:8080/deploystatus?name=<containername>`
-
-    Validation: name is mandatory, will say bad request in case name is not provided
+    - `curl -X GET http://localhost:8080/deploystatus?name=<containername>`
 
 - Stop
     `curl -X GET http://localhost:8080/stop?name=<containername>`
-    Validation: name is mandatory, will say bad request in case name is not provided
-
 
 ## Add/Remove/List docker hosts
 
-- List Docker Hosts
-    curl -X GET http://127.0.0.1:8080/listhosts
+- List Docker Hosts:
+    `curl -X GET http://127.0.0.1:8080/listhosts`
 
-- Add Docker Hosts
-    curl -XGET http://127.0.0.1:8080/addhost?uri="http://127.0.0.1:2375"
+- Add Docker Hosts:
+    `curl -XGET http://127.0.0.1:8080/addhost?uri="http://127.0.0.1:2375"`
 
-- Remove Docker Hosts
+- Remove Docker Hosts:
     `curl -XGET http://127.0.0.1:8080/removehost?uri="http://127.0.0.1:2375"`
 
 
