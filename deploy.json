@@ -1,0 +1,18 @@
+{
+    "image" : "alpine",
+    "name" : "container",
+    "cmd" : [ "sleep", "60"],
+    "env_variables" : ["TEST=1", "TEST=2"],
+    "volumes" : ["/tmp:/tmp", "/opt/:/opt"],
+    "exposed" : {
+        "22/tcp": { }
+    },
+    "ports" : {
+      "tcp" : {
+        "8080" : "8080"
+      },
+      "udp" : {
+        "5555" : "5555"
+      }
+    }
+}
